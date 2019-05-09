@@ -1,6 +1,8 @@
 {
   "name": "flickrfeed",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Flicker Photos Feed",
+  "repository": "https://github.com/hianbattiston/flickrfeed",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

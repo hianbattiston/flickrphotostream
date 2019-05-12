@@ -1,10 +1,20 @@
+@import 'assets/animate.scss';
+
 // Variables
-$primary-font: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$text-color: #253141;
+$primary-font: 'Roboto';
+$text-color: #333;
+$a-color: #1057ae;
+$red-color: #FF0084;
+$red-color-hover: #ff5bb0;
+$border-color: #BDBDBD;
+$border-width: 1px;
+$tutor-bg: #F0F0F0;
+$img-bg: #F0F0F0;
 
 //Reseting
-html {
+html, body {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *, *:before, *:after {
@@ -16,7 +26,6 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   padding: 0;
   font-family: $primary-font;
   color: $text-color;
-  font-size: 12px;
 }
 
 ol, ul {
@@ -35,6 +44,7 @@ a {
 //Container
 .container {
   width: 100%;
+  height: calc(98% - 150px);
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -43,7 +53,7 @@ a {
 
 @media (min-width: 576px) {
   .container {
-    max-width: 540px;
+    max-width: 100%;
   }
 }
 
@@ -62,5 +72,64 @@ a {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+}
+//VirtualScroll
+cdk-virtual-scroll-viewport {
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $red-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $red-color-hover;
+}
+
+//Title
+h1 {
+  margin: 25px 10px;
+  padding: 0 5px;
+  background: $red-color;
+  color: white;
+  display: inline-block;
+}
+
+//Photos
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  padding-top: 10px;
+  .photo {
+    background: $tutor-bg;
+    margin: 0px 10px 20px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    .image {
+      height: 155px;
+      overflow: hidden;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    .image-info {
+      padding: 15px;
+      .title a {
+        font-weight: bold;
+        color: $a-color;
+        font-size: 16px;
+      }
+      .title a:hover {
+        background: $a-color;
+        color: white;
+      }
+      .title, .description, .no_description {
+        padding-bottom: 7px;
+      }
+    }
   }
 }
